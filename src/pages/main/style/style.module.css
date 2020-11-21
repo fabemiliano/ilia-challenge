@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+.main {
+  background-image: url("../../../assets/images/bg.jpeg");
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+.main .container .card {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 5px solid black;
+}
+
+.main .container .card div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .container .card div p {
+  color: white;
+  font-size: 2rem;
+  font-family: Bebas Neue;
+}
+/*# sourceMappingURL=style.module.css.map */
