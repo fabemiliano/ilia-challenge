@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+$main-color: #343B65;
+$secondary-color: #ff0;
+$tertiary-color: #fff;
+$quarter-color: #fa0;
+
+.main {
+  width: 80%;
+  height: 40vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background: $quarter-color;
+  border-radius: 40px;
+  padding: 20px;
+  p {
+    color: $tertiary-color;
+    font-size: 2rem;
+    font-family: Bebas Neue;
+    &:first-child {
+      font-size: 3rem;
+    }
+    &:last-child {
+      font-size: 1.5rem;
+    }
+  }
+  .exit {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: 0.5s;
+    svg {
+      path{
+      fill: $tertiary-color;
+      transition: 0.5s;
+      }
+    }
+    &:hover {
+    background: #fff;
+    svg {
+      path{
+      fill: $quarter-color;
+      }
+    }
+    }
+  }
+  .attackInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+}

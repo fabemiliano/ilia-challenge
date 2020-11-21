@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .main {
-  background-image: url("../../../assets/images/bg.jpeg");
-  background-size: cover;
+  background: #2B3151;
   height: 100vh;
   width: 100%;
   display: -webkit-box;
@@ -11,6 +10,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -18,14 +21,30 @@
           box-sizing: border-box;
 }
 
+.main .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+}
+
+.main .nav h1 {
+  color: #ff0;
+}
+
 .main .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80%;
+  width: 90%;
   margin: auto;
   overflow-x: scroll;
-  padding: 20px;
 }
 
 .main .container .card {
@@ -33,6 +52,21 @@
   padding: 10px;
   border-radius: 10px;
   border: 5px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 600px;
+  position: relative;
 }
 
 .main .container .card div {
@@ -46,11 +80,27 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 75%;
 }
 
 .main .container .card div p {
   color: white;
-  font-size: 2rem;
   font-family: Bebas Neue;
+  text-align: center;
+}
+
+.main .container .card div p:first-child {
+  font-size: 2rem;
+}
+
+.main .container .card div p:last-child {
+  font-size: 1rem;
+}
+
+.main .container .card div img {
+  width: 40px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 /*# sourceMappingURL=style.module.css.map */

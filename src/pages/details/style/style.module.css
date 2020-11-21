@@ -8,17 +8,187 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #2B3151;
+  height: 100vh;
+  font-family: Bebas Neue;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+.main .container img {
+  width: 70%;
+  max-width: 500px;
+}
+
+.main .arrowLeft {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  color: #fa0;
+  background: #323961;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
 }
 
-.main img {
+.main .arrowLeft:hover {
+  background: #fa0;
+  color: #323961;
+}
+
+.main .circle {
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .circle p {
+  font-size: 2rem;
+  color: #fff;
+  font-family: Bebas Neue;
+}
+
+.main .circle p:last-child {
+  margin-bottom: 30px;
+}
+
+.main .circle div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #2B3151;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.main .circle div img {
   width: 50%;
   position: relative;
   max-width: 300px;
+}
+
+.main .cardInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .cardInfo > p {
+  color: #ff0;
+  margin: 5px;
+}
+
+.main .cardInfo div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .cardInfo div p {
+  color: #fff;
+}
+
+.main .cardInfo img {
+  width: 30px;
+  position: relative;
+  max-width: 300px;
+}
+
+.main .cardInfo .attacks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .cardInfo .attacks button {
+  width: 100px;
+  height: 40px;
+  background: #fa0;
+  border: none;
+  border-radius: 50px;
+  color: #2B3151;
+  font-weight: 900;
+  outline: none;
+  margin: 4px;
 }
 /*# sourceMappingURL=style.module.css.map */
