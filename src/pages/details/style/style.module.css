@@ -41,6 +41,13 @@
 .main .container img {
   width: 70%;
   max-width: 500px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.main .container img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .main .arrowLeft {
@@ -134,24 +141,40 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 30px;
+  width: 80%;
+  border: 1px solid #ff0;
+  padding: 10px;
 }
 
-.main .cardInfo > p {
+.main .cardInfo > div > p {
   color: #ff0;
   margin: 5px;
 }
 
-.main .cardInfo div {
+.main .cardInfo .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.main .cardInfo .left div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -160,27 +183,47 @@
           align-items: center;
 }
 
-.main .cardInfo div p {
+.main .cardInfo .left div p {
   color: #fff;
 }
 
-.main .cardInfo img {
+.main .cardInfo .left img {
   width: 30px;
   position: relative;
-  max-width: 300px;
 }
 
-.main .cardInfo .attacks {
+.main .cardInfo .right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.main .cardInfo .right .attacks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 90%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.main .cardInfo .attacks button {
+.main .cardInfo .right .attacks button {
   width: 100px;
   height: 40px;
   background: #fa0;
@@ -190,5 +233,6 @@
   font-weight: 900;
   outline: none;
   margin: 4px;
+  cursor: url("../../../assets/images/cursor.png"), auto;
 }
 /*# sourceMappingURL=style.module.css.map */

@@ -1,17 +1,19 @@
-import React, { useState, useEffect, useContext } from 'react';
+/* eslint-disable react/prop-types */
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { getAllPokemons } from '../../services/api';
 import styles from './style/style.module.css';
 import SearchBar from '../../components/searchBar';
-import { ApplicationContext } from '../../context';
+
 import Loading from '../../components/loading';
 import { defineBg, getIcon } from '../../assets/auxFunctions';
 
-function Main() {
+function Main(props) {
   const [pokemons, setPokemons] = useState([]);
   const [pokemonsArray, setPokemonsArray] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { typedPokemon } = useContext(ApplicationContext);
+  const { typedPokemon } = props;
 
   pokemons.sort((a, b) => (a.name > b.name ? 1 : -1));
 
@@ -57,4 +59,8 @@ function Main() {
   );
 }
 
-export default Main;
+const mapStateToProps = (state) => ({
+  typedPokemon: state.typedPokemon,
+});
+
+export default connect(mapStateToProps)(Main);

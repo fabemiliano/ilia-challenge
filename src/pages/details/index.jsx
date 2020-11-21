@@ -1,24 +1,23 @@
-import React, { useState, useEffect, useContext } from 'react';
+/* eslint-disable react/prop-types */
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { getPokemonById } from '../../services/api';
 import styles from './style/style.module.css';
 import Modal from '../../components/modal';
-import { ApplicationContext } from '../../context';
 import Loading from '../../components/loading';
 import { defineBg, getIcon } from '../../assets/auxFunctions';
+import { changeShowModal, changeAttacks, changeChosenAttack } from '../../actions';
 
 function Details(props) {
-  // eslint-disable-next-line react/prop-types
-  const { props: { match: { params: { id } } } } = props;
+  const {
+    props: { match: { params: { id } } }, showModal, setShowModal, setAttacks, setChosenAttack,
+  } = props;
 
   const [pokemon, setPokemon] = useState({});
   const [loading, setLoading] = useState(true);
-
-  const {
-    showModal, setShowModal, setAttacks, setChosenAttack,
-  } = useContext(ApplicationContext);
 
   useEffect(() => {
     getPokemonById(id).then(({ data: { card } }) => {
@@ -47,25 +46,29 @@ function Details(props) {
             <div className={styles.container}>
               <img src={pokemon.imageUrlHiRes} alt={pokemon.name} />
               <div className={styles.cardInfo}>
-                <p>Resistances</p>
-                {pokemon.resistances
-                  ? (pokemon.resistances.map(({ type, value }) => (
+                <div className={styles.left}>
+                  <p>Resistances</p>
+                  {pokemon.resistances
+                    ? (pokemon.resistances.map(({ type, value }) => (
+                      <div>
+                        <img src={getIcon(type)} alt="" />
+                        <p>{value}</p>
+                      </div>
+                    )))
+                    : <div><p>None</p></div>}
+                  <p>Weaknesses</p>
+                  {pokemon.weaknesses && pokemon.weaknesses.map(({ type, value }) => (
                     <div>
                       <img src={getIcon(type)} alt="" />
                       <p>{value}</p>
                     </div>
-                  )))
-                  : <div><p>None</p></div>}
-                <p>Weaknesses</p>
-                {pokemon.weaknesses && pokemon.weaknesses.map(({ type, value }) => (
-                  <div>
-                    <img src={getIcon(type)} alt="" />
-                    <p>{value}</p>
+                  ))}
+                </div>
+                <div className={styles.right}>
+                  <p>Attacks</p>
+                  <div className={styles.attacks}>
+                    {pokemon.attacks && pokemon.attacks.map(({ name }) => <button onClick={() => { setShowModal(true); setChosenAttack(name); }} type="button">{name}</button>)}
                   </div>
-                ))}
-                <p>Attacks</p>
-                <div className={styles.attacks}>
-                  {pokemon.attacks && pokemon.attacks.map(({ name }) => <button onClick={() => { setShowModal(true); setChosenAttack(name); }} type="button">{name}</button>)}
                 </div>
               </div>
             </div>
@@ -76,4 +79,13 @@ function Details(props) {
   );
 }
 
-export default Details;
+const mapStateToProps = (state) => ({
+  showModal: state.showModal,
+});
+const mapDispatchToProps = (dispatch) => ({
+  setShowModal: () => dispatch(changeShowModal()),
+  setAttacks: (value) => dispatch(changeAttacks(value)),
+  setChosenAttack: (value) => dispatch(changeChosenAttack(value)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Details);

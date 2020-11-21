@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import styles from './style/style.module.css';
-import { ApplicationContext } from '../../context';
+import { changeShowModal } from '../../actions';
 
-function Modal() {
-  const { setShowModal, chosenAttack, attacks } = useContext(ApplicationContext);
+function Modal(props) {
+  const { setShowModal, chosenAttack, attacks } = props;
   const attack = attacks.filter(({ name }) => chosenAttack === name)[0];
   return (
 
@@ -28,4 +30,13 @@ function Modal() {
   );
 }
 
-export default Modal;
+const mapStateToProps = (state) => ({
+  chosenAttack: state.chosenAttack,
+  attacks: state.attacks,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setShowModal: () => dispatch(changeShowModal()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

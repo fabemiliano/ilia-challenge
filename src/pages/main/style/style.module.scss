@@ -7,7 +7,7 @@ $tertiary-color: #fff;
 $quarter-color: #fa0;
 
 .main {
-  background: #2B3151;
+  background: $main-color;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -21,7 +21,7 @@ $quarter-color: #fa0;
     justify-content: space-between;
     width: 80%;
     h1 {
-      color: #ff0;
+      color: $secondary-color;
     }
   }
 
@@ -39,15 +39,18 @@ $quarter-color: #fa0;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      width: 600px;
       position: relative;
+      min-width: 250px;
+      & > img {
+        width: 100%;
+      }
       div {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 75%;
         p {
-          color: white;
+          color:$tertiary-color;
           font-family: Bebas Neue;
           text-align: center;
           &:first-child {
@@ -68,3 +71,15 @@ $quarter-color: #fa0;
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .container {
+    overflow: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 998px) {
+  .container {
+    justify-content: space-between;
+  }
+}

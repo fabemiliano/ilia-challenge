@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
 import styles from './style/style.module.css';
-import { ApplicationContext } from '../../context';
+import { changeTypedPokemon } from '../../actions';
 
-function SearchBar() {
-  const { typedPokemon, setTypedPokemon } = useContext(ApplicationContext);
+function SearchBar(props) {
+  const { typedPokemon, setTypedPokemon } = props;
 
   return (
     <div className={styles.search}>
@@ -17,4 +19,11 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+const mapStateToProps = (state) => ({
+  typedPokemon: state.typedPokemon,
+});
+const mapDispatchToProps = (dispatch) => ({
+  setTypedPokemon: (value) => dispatch(changeTypedPokemon(value)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

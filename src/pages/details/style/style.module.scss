@@ -24,6 +24,10 @@ $quarter-color: #fa0;
     img {
       width: 70%;
       max-width: 500px;
+      transition: 0.2s;
+      &:hover {
+        transform: scale(1.1)
+      }
     }
   }
   .arrowLeft {
@@ -86,40 +90,60 @@ $quarter-color: #fa0;
 
   .cardInfo{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    & > p {
+    justify-content: space-around;
+    margin-top: 30px;
+    width: 80%;
+    border: 1px solid $secondary-color;
+    padding: 10px;
+    & > div {
+      & > p {
       color: $secondary-color;
       margin: 5px;
     }
-    div {
+    }
+    .left {
       display: flex;
       align-items: center;
-      p {
-        color: $tertiary-color;
+      justify-content: space-between; 
+      flex-direction: column;
+      height: 100%;
+      div {
+          display: flex;
+          align-items: center;
+          p {
+            color: $tertiary-color;
+          }
+        }
+      img {
+        width: 30px;
+        position: relative;
       }
     }
-    img {
-      width: 30px;
-      position: relative;
-      max-width: 300px;
-    }
-    .attacks {
+    .right {
       display: flex;
-      width: 90%;
-      justify-content: center;
-      button {
-        width: 100px;
-        height: 40px;
-        background: $quarter-color;
-        border:none;
-        border-radius: 50px;
-        color: $main-color;
-        font-weight: 900;
-        outline: none;
-        margin: 4px;
-      }
+      align-items: center;
+      justify-content: space-between; 
+      flex-direction: column;
+      height: 100%;
+      .attacks {
+          display: flex;
+          flex-direction: column;
+          width: 90%;
+          justify-content: center;
+          button {
+            width: 100px;
+            height: 40px;
+            background: $quarter-color;
+            border:none;
+            border-radius: 50px;
+            color: $main-color;
+            font-weight: 900;
+            outline: none;
+            margin: 4px;
+            cursor: url('../../../assets/images/cursor.png'), auto;
+          }
+        }
     }
   }
   
