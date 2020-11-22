@@ -2,35 +2,25 @@
 
 .search {
   position: relative;
-  display: flex;
-  justify-content: flex-end;
+  @include flexRow(flex-end);
   &:hover {
     input {
       width: 150px;
     }
   }
   input {
-    height: 35px;
+    @include iconBg(35px, 35px, 10px, '');
     box-sizing: border-box;
-    border-radius: 10px;
-    width: 35px;
-    transition: 0.5s;
     font-family: Bebas Neue;
-    outline: none;
-    padding-left: 10px;
     font-size: 1rem;
+    padding-left: 10px;
+    outline: none;
+    transition: 0.5s;
   }
   div {
-    width: 35px;
-    height: 35px;
-    background: $secondary-color;
-    border-radius: 10px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    right: 0;
+    @include absoluteRightTop(0, 0);
+    @include flexRow(center);
+    @include iconBg(35px, 35px, 10px, $secondary-color);
   }
 }
 

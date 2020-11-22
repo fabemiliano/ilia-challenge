@@ -1,27 +1,29 @@
 @import "../../../sass_utilities/variables";
 
-
 .main {
-  @extend %columnCentered;
+  @include flexColumn(center);
   background: $main-color;
   box-sizing: border-box;
   height: 100vh;
   width: 100%;
   .nav {
-    @extend %rowBetween;
+    @include flexRow(space-between);
     width: 80%;
     h1 {
       color: $secondary-color;
+      font-family: Pokemon;
+      letter-spacing: 4px;
+      -webkit-box-reflect: below -30px linear-gradient(to bottom, transparent, transparent, black);
+      padding: 0;
     }
   }
-
   .container {
     display: flex;
     width: 90%;
     margin: auto;
     overflow-x: scroll;
     .card {
-      @extend %columnBetween;
+      @include flexColumn(space-between);
       box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5), -5px -5px 20px rgba(0, 0, 0, 0.5);
       border-radius: 10px;
       border: 5px solid black;
@@ -30,7 +32,7 @@
       padding: 10px;
       position: relative;
       transition: 0.5s;
-      width: 250px;
+      min-width: 250px;
       &:hover {
         transform: scale(1.1)
       }
@@ -38,7 +40,7 @@
         width: 100%;
       }
       div {
-        @extend %columnCentered;
+        @include flexColumn(center);
         width: 75%;
         p {
           color:$tertiary-color;
@@ -62,13 +64,8 @@
 
 @media only screen and (min-width: 768px) {
   .container {
-    overflow: none;
+    overflow: auto;
     flex-wrap: wrap;
-    justify-content: space-around;
-  }
-}
-@media only screen and (min-width: 998px) {
-  .container {
-    justify-content: space-between;
+    justify-content: center;
   }
 }

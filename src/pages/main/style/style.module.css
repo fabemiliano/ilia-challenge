@@ -1,4 +1,4 @@
-.main, .main .container .card div {
+.main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,6 +12,11 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: #2B3151;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
 }
 
 .main .nav {
@@ -24,6 +29,24 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 80%;
+}
+
+.main .nav h1 {
+  color: #ff0;
+  font-family: Pokemon;
+  letter-spacing: 4px;
+  -webkit-box-reflect: below -30px linear-gradient(to bottom, transparent, transparent, black);
+  padding: 0;
+}
+
+.main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  overflow-x: scroll;
 }
 
 .main .container .card {
@@ -40,34 +63,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.main {
-  background: #2B3151;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  height: 100vh;
-  width: 100%;
-}
-
-.main .nav {
-  width: 80%;
-}
-
-.main .nav h1 {
-  color: #ff0;
-}
-
-.main .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 90%;
-  margin: auto;
-  overflow-x: scroll;
-}
-
-.main .container .card {
   -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5), -5px -5px 20px rgba(0, 0, 0, 0.5);
           box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5), -5px -5px 20px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
@@ -78,7 +73,7 @@
   position: relative;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  width: 250px;
+  min-width: 250px;
 }
 
 .main .container .card:hover {
@@ -91,6 +86,19 @@
 }
 
 .main .container .card div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 75%;
 }
 
@@ -118,19 +126,12 @@
 
 @media only screen and (min-width: 768px) {
   .container {
-    overflow: none;
+    overflow: auto;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-}
-
-@media only screen and (min-width: 998px) {
-  .container {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 /*# sourceMappingURL=style.module.css.map */

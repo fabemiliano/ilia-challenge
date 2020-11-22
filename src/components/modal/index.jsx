@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,13 +14,12 @@ function Modal(props) {
   return (
 
     <div className={styles.main}>
-      <div className={styles.exit}>
+      <button type="button" className={styles.exit} onClick={() => setShowModal(false)}>
         <FontAwesomeIcon
           icon={faTimes}
           color="#fff"
-          onClick={() => setShowModal(false)}
         />
-      </div>
+      </button>
       <div className={styles.attackInfo}>
         <p>{attack.name}</p>
         <p>{`Mana: -${attack.convertedEnergyCost}`}</p>

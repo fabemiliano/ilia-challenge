@@ -1,21 +1,17 @@
 @import "../../../sass_utilities/variables";
 
 .main {
-  width: 80%;
-  max-width: 500px;
-  height: 40vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  @include absoluteLeftTop(50%, 50%);
   background: $quarter-color;
   border-radius: 40px;
+  height: 40vh;
+  max-width: 500px;
   padding: 20px;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: 1;
   p {
-    color: $tertiary-color;
-    font-size: 2rem;
-    font-family: Bebas Neue;
+    @include text(2rem, $tertiary-color);
     &:first-child {
       font-size: 3rem;
     }
@@ -24,15 +20,9 @@
     }
   }
   .exit {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+    @include absoluteRightTop(10px, 10px);
+    @include flexRow(center);
+    @include iconBg(40px, 40px, 50%, $quarter-color);
     transition: 0.5s;
     svg {
       path{
@@ -41,7 +31,7 @@
       }
     }
     &:hover {
-    background: #fff;
+    background: $tertiary-color;
     svg {
       path{
       fill: $quarter-color;
@@ -50,10 +40,7 @@
     }
   }
   .attackInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    @include flexColumn(space-around);
     height: 100%;
   }
 }
