@@ -5,10 +5,12 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { getPokemonById } from '../../services/api';
-import styles from './style/style.module.css';
+
 import Modal from '../../components/modal';
 import Loading from '../../components/loading';
+
+import { getPokemonById } from '../../services/api';
+import styles from './style/style.module.css';
 import { defineBg, getIcon } from '../../assets/auxFunctions';
 import { changeShowModal, changeAttacks, changeChosenAttack } from '../../actions';
 
@@ -36,7 +38,7 @@ function renderCardInfo(pokemon, setShowModal, setChosenAttack, t) {
       <div className={styles.right}>
         <p>{t('attacks')}</p>
         <div className={styles.attacks}>
-          {pokemon.attacks.map(({ name }) => <button key={name} onClick={() => { setShowModal(true); setChosenAttack(name); }} type="button">{name}</button>)}
+          {pokemon.attacks.map(({ name }) => <button data-testid="attack" key={name} onClick={() => { setShowModal(true); setChosenAttack(name); }} type="button">{name}</button>)}
         </div>
       </div>
     </div>
@@ -82,7 +84,7 @@ function Details(props) {
       : (
         <div>
           <div className={styles.main} style={{ filter: showModal ? 'blur(10px)' : 'blur(0px)' }}>
-            <Link to="/" className={styles.arrowLeft}>
+            <Link to="/" className={styles.arrowLeft} data-testid="go-back">
               <FontAwesomeIcon icon={faArrowLeft} />
             </Link>
             {renderHeader(pokemon)}

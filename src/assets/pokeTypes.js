@@ -1,7 +1,7 @@
 const pokeTypes = [
   { type: 'Colorless', color: '#E7E9ED', src: '/icons/normal.svg' },
   { type: 'Darkness', color: '#707070', src: '/icons/dark.svg' },
-  { type: 'Dragon', color: '##F06E56', src: '/icons/dragon.svg' },
+  { type: 'Dragon', color: '#F06E56', src: '/icons/dragon.svg' },
   { type: 'Fairy', color: '#FCB8E8', src: '/icons/fairy.svg' },
   { type: 'Fighting', color: '#D56821', src: '/icons/fighting.svg' },
   { type: 'Fire', color: '#FC7D22', src: '/icons/fire.svg' },

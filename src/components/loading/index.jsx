@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import styles from './style/style.module.css';
 import pokeball from '../../assets/images/pokeball.png';
 

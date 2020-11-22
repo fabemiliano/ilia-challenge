@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
+
 import styles from './style/style.module.css';
 import { changeShowModal } from '../../actions';
 
@@ -17,7 +18,7 @@ function Modal(props) {
   return (
 
     <div className={styles.main}>
-      <button type="button" className={styles.exit} onClick={() => setShowModal(false)}>
+      <button type="button" className={styles.exit} onClick={() => setShowModal(false)} data-testid="exit">
         <FontAwesomeIcon
           icon={faTimes}
           color="#fff"
