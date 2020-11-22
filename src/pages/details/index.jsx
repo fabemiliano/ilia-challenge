@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getPokemonById } from '../../services/api';
@@ -63,13 +63,15 @@ function Details(props) {
 
   const [pokemon, setPokemon] = useState({});
   const [loading, setLoading] = useState(true);
+  const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
     getPokemonById(id).then(({ data: { card } }) => {
       setPokemon(card);
       setLoading(false);
       setAttacks(card.attacks);
-    });
+    })
+      .catch(() => { setLoading(false); setRedirect(true); });
   }, []);
 
   return (
@@ -88,6 +90,7 @@ function Details(props) {
             </div>
           </div>
           {showModal && <Modal />}
+          {redirect && <Redirect to="/notFound" />}
         </div>
       )
   );

@@ -1,0 +1,30 @@
+@import "../../../sass_utilities/variables";
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background: $main-color;
+  @include flexColumn(center);
+  h1 {
+    color: $secondary-color;
+    font-family: Pokemon;
+    font-size: 3rem;
+    margin: 0;
+  }
+  .container {
+    @include flexColumn(center);
+    div {
+      @include flexRow(center);
+      img {
+        width: 60px;
+      }
+    }
+    a {
+      background: $secondary-color;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      font-family: Bebas Neue;
+    }
+  }
+}
