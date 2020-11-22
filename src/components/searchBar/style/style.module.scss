@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "../../../sass_utilities/variables";
 
 .search {
   position: relative;
@@ -16,12 +15,15 @@
     border-radius: 10px;
     width: 35px;
     transition: 0.5s;
+    font-family: Bebas Neue;
     outline: none;
+    padding-left: 10px;
+    font-size: 1rem;
   }
   div {
     width: 35px;
     height: 35px;
-    background: #ff0;
+    background: $secondary-color;
     border-radius: 10px;
     position: absolute;
     display: flex;
@@ -42,6 +44,8 @@
     input {
       width: 50px;
       height: 50px;
+      padding-left: 20px;
+      font-size: 1rem;
     }
     div {
       width: 50px;

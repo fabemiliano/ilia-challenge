@@ -1,19 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-$main-color: #343B65;
-$secondary-color: #ff0;
-$tertiary-color: #fff;
-$quarter-color: #fa0;
+@import "../../../sass_utilities/variables";
 
 .main {
   width: 100%;
   height: 100vh;
   background: $main-color;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexColumn(center);
   img {
     width: 100px;
     animation: animate linear 3s infinite;

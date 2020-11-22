@@ -2,6 +2,7 @@ const INITIAL_STATE = {
   showModal: false,
   attacks: [],
   chosenAttack: '',
+  typedPokemon: '',
 };
 
 const reducer = (state = INITIAL_STATE, action) => {

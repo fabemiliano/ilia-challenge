@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .search {
   position: relative;
   display: -webkit-box;
@@ -22,7 +20,10 @@
   width: 35px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  font-family: Bebas Neue;
   outline: none;
+  padding-left: 10px;
+  font-size: 1rem;
 }
 
 .search div {
@@ -51,6 +52,8 @@
   .search input {
     width: 50px;
     height: 50px;
+    padding-left: 20px;
+    font-size: 1rem;
   }
   .search div {
     width: 50px;

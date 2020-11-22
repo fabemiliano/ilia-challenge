@@ -1,150 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-$main-color: #2B3151;
-$secondary-color: #ff0;
-$tertiary-color: #fff;
-$quarter-color: #fa0;
+@import "../../../sass_utilities/variables";
 
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
+  @include flexColumn(flex-end);
   background: $main-color;
   height: 100vh;
-  font-family: Bebas Neue;
   transition: 0.5s;
   .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    @include flexColumn(center);
+    height: 75%;
     margin-bottom: 40px;
+    padding-top: 40px;
     img {
       width: 70%;
-      max-width: 500px;
+      max-width: 450px;
       transition: 0.2s;
       &:hover {
         transform: scale(1.1)
       }
     }
-  }
-  .arrowLeft {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    color: $quarter-color;
-    background: #323961;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    transition: 0.5s;
-    outline: none;
-    &:hover {
-    background: $quarter-color;
-    color: #323961;
-    }
-  }
-
-  .circle {
-    position: absolute;
-    width: 100%;
-    height: 40%;
-    top:0;
-    left: 0;
-    border-radius: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    p {
-      font-size: 2rem;
-      color: $tertiary-color;
-      font-family: Bebas Neue;
-      &:last-child {
-        margin-bottom: 30px;
+    .cardInfo{
+      @include flexRow(space-around);
+      margin-top: 30px;
+      width: 80%;
+      border: 1px solid $secondary-color;
+      padding: 10px;
+      & > div {
+        & > p {
+        @include text(1.5rem, $secondary-color);
+        margin: 5px;
+        }
       }
-    }
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: $main-color;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.2);
-      img {
-        width: 50%;
-        position: relative;
-        max-width: 300px;
-      }
-    }
-  }
-
-  .cardInfo{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 30px;
-    width: 80%;
-    border: 1px solid $secondary-color;
-    padding: 10px;
-    & > div {
-      & > p {
-      color: $secondary-color;
-      margin: 5px;
-    }
-    }
-    .left {
-      display: flex;
-      align-items: center;
-      justify-content: space-between; 
-      flex-direction: column;
-      height: 100%;
-      div {
-          display: flex;
-          align-items: center;
+      .left {
+        @include flexColumn(space-between);
+        height: 100%;
+        div {
+          @include flexRow(space-around);
           p {
-            color: $tertiary-color;
+            @include text(1rem, $tertiary-color);
           }
         }
-      img {
-        width: 30px;
-        position: relative;
+        img {
+          width: 30px;
+        }
       }
-    }
-    .right {
-      display: flex;
-      align-items: center;
-      justify-content: space-between; 
-      flex-direction: column;
-      height: 100%;
-      .attacks {
-          display: flex;
-          flex-direction: column;
+      .right {
+        @include flexColumn(space-between);
+        height: 100%;
+        .attacks {
+          @include flexColumn(center);
           width: 90%;
-          justify-content: center;
           button {
-            width: 100px;
-            height: 40px;
-            background: $quarter-color;
-            border:none;
-            border-radius: 50px;
+            @include iconBg(40px, 100px, 50px, $quarter-color);
             color: $main-color;
             font-weight: 900;
-            outline: none;
             margin: 4px;
             cursor: url('../../../assets/images/cursor.png'), auto;
           }
         }
+      }
     }
   }
-  
+
+  .arrowLeft {
+    @include flexRow(center);
+    @include absoluteLeftTop(0, 50%);
+    @include iconBg(50px, 50px, 50%, $aux-color);
+    color: $quarter-color;
+    transition: 0.5s;
+    &:hover {
+    background: $quarter-color;
+    color: $aux-color;
+    }
+  }
+
+  .circle {
+    @include absoluteLeftTop(0, 0%);
+    @include flexColumn(flex-end);
+    @include iconBg(40%, 100%, 50%, $aux-color);
+    transform: translateY(-50%);
+    p {
+      @include text(2rem, $tertiary-color);
+      &:last-child {
+        margin-bottom: 10px;
+      }
+    }
+    & > div {
+      @include flexColumn(flex-end);
+      div {
+        @include flexColumn(center);
+        @include iconBg(50px, 50px, 50%, $main-color);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.2);
+        img {
+          width: 50%;
+        }
+      }
+    }
+  }
 }

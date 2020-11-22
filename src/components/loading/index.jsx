@@ -3,20 +3,12 @@ import styles from './style/style.module.css';
 import pokeball from '../../assets/images/pokeball.png';
 
 function Loading() {
+  const phrase = ('Loading...').split('');
   return (
     <div className={styles.main}>
       <img src={pokeball} alt="" />
       <div>
-        <span>L</span>
-        <span>O</span>
-        <span>A</span>
-        <span>D</span>
-        <span>I</span>
-        <span>N</span>
-        <span>G</span>
-        <span>.</span>
-        <span>.</span>
-        <span>.</span>
+        {phrase.map((e, i) => <span key={`${i + 1}i`}>{e}</span>)}
       </div>
     </div>
   );

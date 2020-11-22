@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 import styles from './style/style.module.css';
 import { changeShowModal } from '../../actions';
 
@@ -24,7 +24,6 @@ function Modal(props) {
         <p>{`Mana: -${attack.convertedEnergyCost}`}</p>
         <p>{`Damage: ${attack.damage}`}</p>
         <p>{`Description: ${attack.text ? attack.text : 'nothing to show'}`}</p>
-        {console.log(attack)}
       </div>
     </div>
   );
@@ -40,3 +39,9 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+
+Modal.propTypes = {
+  chosenAttack: PropTypes.bool.isRequired,
+  setShowModal: PropTypes.func.isRequired,
+  attacks: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

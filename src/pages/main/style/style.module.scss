@@ -1,24 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "../../../sass_utilities/variables";
 
-$main-color: #2B3151;
-$secondary-color: #ff0;
-$tertiary-color: #fff;
-$quarter-color: #fa0;
 
 .main {
+  @extend %columnCentered;
   background: $main-color;
+  box-sizing: border-box;
   height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
   .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @extend %rowBetween;
     width: 80%;
     h1 {
       color: $secondary-color;
@@ -31,27 +21,27 @@ $quarter-color: #fa0;
     margin: auto;
     overflow-x: scroll;
     .card {
-      margin: 10px;
-      padding: 10px;
+      @extend %columnBetween;
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5), -5px -5px 20px rgba(0, 0, 0, 0.5);
       border-radius: 10px;
       border: 5px solid black;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
+      margin: 25px 10px;
+      min-height: 450px;
+      padding: 10px;
       position: relative;
-      min-width: 250px;
+      transition: 0.5s;
+      width: 250px;
+      &:hover {
+        transform: scale(1.1)
+      }
       & > img {
         width: 100%;
       }
       div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @extend %columnCentered;
         width: 75%;
         p {
           color:$tertiary-color;
-          font-family: Bebas Neue;
           text-align: center;
           &:first-child {
             font-size: 2rem;
@@ -62,9 +52,8 @@ $quarter-color: #fa0;
         }
         img {
           width: 40px;
-          position: absolute;
-          right: 5px;
-          top: 5px;
+          @include absoluteRightTop(5px, 5px);
+          filter: drop-shadow(0 0 5px) invert(90%);
         }
       }
     }

@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 .main {
   width: 100%;
   height: 100vh;
-  background: #343B65;
+  background: #2B3151;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,12 +9,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main img {

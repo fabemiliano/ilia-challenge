@@ -1,13 +1,14 @@
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { getAllPokemons } from '../../services/api';
 import styles from './style/style.module.css';
-import SearchBar from '../../components/searchBar';
-
-import Loading from '../../components/loading';
 import { defineBg, getIcon } from '../../assets/auxFunctions';
+
+import SearchBar from '../../components/searchBar';
+import Loading from '../../components/loading';
 
 function Main(props) {
   const [pokemons, setPokemons] = useState([]);
@@ -64,3 +65,7 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps)(Main);
+
+Main.propTypes = {
+  typedPokemon: PropTypes.string.isRequired,
+};

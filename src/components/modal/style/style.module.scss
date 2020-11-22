@@ -1,10 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-$main-color: #343B65;
-$secondary-color: #ff0;
-$tertiary-color: #fff;
-$quarter-color: #fa0;
+@import "../../../sass_utilities/variables";
 
 .main {
   width: 80%;

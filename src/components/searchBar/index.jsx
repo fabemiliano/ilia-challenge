@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import styles from './style/style.module.css';
 import { changeTypedPokemon } from '../../actions';
 
@@ -27,3 +27,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+
+SearchBar.propTypes = {
+  typedPokemon: PropTypes.string.isRequired,
+  setTypedPokemon: PropTypes.func.isRequired,
+};
