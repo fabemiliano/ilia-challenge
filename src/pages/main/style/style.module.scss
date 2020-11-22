@@ -8,6 +8,7 @@
   width: 100%;
   .nav {
     @include flexRow(space-between);
+    margin-top: 20px;
     width: 80%;
     h1 {
       color: $secondary-color;
@@ -15,6 +16,12 @@
       letter-spacing: 4px;
       -webkit-box-reflect: below -30px linear-gradient(to bottom, transparent, transparent, black);
       padding: 0;
+    }
+  }
+  .flags {
+    @include absoluteLeftTop(10px, 10px);
+    img {
+      width: 30px;
     }
   }
   .container {

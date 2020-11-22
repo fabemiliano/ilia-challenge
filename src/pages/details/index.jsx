@@ -4,6 +4,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import { getPokemonById } from '../../services/api';
 import styles from './style/style.module.css';
 import Modal from '../../components/modal';
@@ -11,11 +12,11 @@ import Loading from '../../components/loading';
 import { defineBg, getIcon } from '../../assets/auxFunctions';
 import { changeShowModal, changeAttacks, changeChosenAttack } from '../../actions';
 
-function renderCardInfo(pokemon, setShowModal, setChosenAttack) {
+function renderCardInfo(pokemon, setShowModal, setChosenAttack, t) {
   return (
     <div className={styles.cardInfo}>
       <div className={styles.left}>
-        <p>Resistances</p>
+        <p>{t('resistances')}</p>
         {pokemon.resistances
           ? (pokemon.resistances.map(({ type, value }) => (
             <div key={value}>
@@ -24,7 +25,7 @@ function renderCardInfo(pokemon, setShowModal, setChosenAttack) {
             </div>
           )))
           : <div><p>None</p></div>}
-        <p>Weaknesses</p>
+        <p>{t('weaknesses')}</p>
         {pokemon.weaknesses.map(({ type, value }) => (
           <div key={value}>
             <img src={getIcon(type)} alt="" />
@@ -33,7 +34,7 @@ function renderCardInfo(pokemon, setShowModal, setChosenAttack) {
         ))}
       </div>
       <div className={styles.right}>
-        <p>Attacks</p>
+        <p>{t('attacks')}</p>
         <div className={styles.attacks}>
           {pokemon.attacks.map(({ name }) => <button key={name} onClick={() => { setShowModal(true); setChosenAttack(name); }} type="button">{name}</button>)}
         </div>
@@ -64,6 +65,7 @@ function Details(props) {
   const [pokemon, setPokemon] = useState({});
   const [loading, setLoading] = useState(true);
   const [redirect, setRedirect] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     getPokemonById(id).then(({ data: { card } }) => {
@@ -86,7 +88,7 @@ function Details(props) {
             {renderHeader(pokemon)}
             <div className={styles.container}>
               <img src={pokemon.imageUrlHiRes} alt={pokemon.name} />
-              {pokemon.attacks && renderCardInfo(pokemon, setShowModal, setChosenAttack)}
+              {pokemon.attacks && renderCardInfo(pokemon, setShowModal, setChosenAttack, t)}
             </div>
           </div>
           {showModal && <Modal />}

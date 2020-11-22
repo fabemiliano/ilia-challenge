@@ -5,12 +5,15 @@ import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import styles from './style/style.module.css';
 import { changeShowModal } from '../../actions';
 
 function Modal(props) {
   const { setShowModal, chosenAttack, attacks } = props;
   const attack = attacks.filter(({ name }) => chosenAttack === name)[0];
+  const { t } = useTranslation();
+
   return (
 
     <div className={styles.main}>
@@ -23,8 +26,8 @@ function Modal(props) {
       <div className={styles.attackInfo}>
         <p>{attack.name}</p>
         <p>{`Mana: -${attack.convertedEnergyCost}`}</p>
-        <p>{`Damage: ${attack.damage}`}</p>
-        <p>{`Description: ${attack.text ? attack.text : 'nothing to show'}`}</p>
+        <p>{`${t('damage')}: ${attack.damage}`}</p>
+        <p>{`${t('description')}: ${attack.text ? attack.text : t('nothingToShow')}`}</p>
       </div>
     </div>
   );

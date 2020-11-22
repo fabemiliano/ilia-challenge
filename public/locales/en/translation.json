@@ -1,0 +1,11 @@
+{ 
+  "placeholder": "search a pokemon",
+  "loading": "loading...",
+  "resistances": "resistances",
+  "weaknesses": "weaknesses",
+  "attacks": "attacks",
+  "damage": "damage",
+  "description": "description",
+  "notFound": "not found",
+  "nothingToShow": "nothing to show"
+}
