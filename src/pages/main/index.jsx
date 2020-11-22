@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 
 import { getAllPokemons } from '../../services/api';
+import { changeLanguage } from '../../actions';
 import styles from './style/style.module.css';
 import { defineBg, getIcon } from '../../assets/auxFunctions';
 import br from '../../assets/images/br.png';
@@ -21,7 +22,7 @@ function Main(props) {
   const [pokemonsArray, setPokemonsArray] = useState([]);
   const [loading, setLoading] = useState(true);
   const { i18n } = useTranslation();
-  const { typedPokemon } = props;
+  const { typedPokemon, setLocale, locale } = props;
 
   pokemons.sort((a, b) => (a.name > b.name ? 1 : -1));
 
@@ -39,10 +40,6 @@ function Main(props) {
     setPokemons(filterdPokemon);
   }, [typedPokemon]);
 
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-  };
-
   return (
     loading
       ? <Loading />
@@ -50,8 +47,8 @@ function Main(props) {
         <div className={styles.main}>
           <div className={styles.nav}>
             <div className={styles.flags}>
-              <img src={uk} alt="en" onClick={() => changeLanguage('en')} />
-              <img src={br} alt="pt" onClick={() => changeLanguage('pt')} />
+              <img src={uk} className={(locale === 'en') && styles.border} alt="en" onClick={() => { i18n.changeLanguage('en'); setLocale('en'); }} />
+              <img src={br} className={(locale === 'pt') && styles.border} alt="pt" onClick={() => { i18n.changeLanguage('pt'); setLocale('pt'); }} />
             </div>
             <h1>Pokedex</h1>
             <SearchBar />
@@ -77,10 +74,17 @@ function Main(props) {
 
 const mapStateToProps = (state) => ({
   typedPokemon: state.typedPokemon,
+  locale: state.locale,
 });
 
-export default connect(mapStateToProps)(Main);
+const mapDispatchToProps = (dispatch) => ({
+  setLocale: (value) => dispatch(changeLanguage(value)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
 
 Main.propTypes = {
   typedPokemon: PropTypes.string.isRequired,
+  locale: PropTypes.string.isRequired,
+  setLocale: PropTypes.func.isRequired,
 };

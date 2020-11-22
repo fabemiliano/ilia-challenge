@@ -17,6 +17,11 @@ const changeTypedPokemon = (value) => ({
   value,
 });
 
+const changeLanguage = (value) => ({
+  type: 'LANGUAGE',
+  value,
+});
+
 export {
-  changeShowModal, changeAttacks, changeChosenAttack, changeTypedPokemon,
+  changeShowModal, changeAttacks, changeChosenAttack, changeTypedPokemon, changeLanguage,
 };

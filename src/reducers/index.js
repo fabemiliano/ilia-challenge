@@ -3,6 +3,7 @@ const INITIAL_STATE = {
   attacks: [],
   chosenAttack: '',
   typedPokemon: '',
+  locale: 'en',
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -11,6 +12,7 @@ const reducer = (state = INITIAL_STATE, action) => {
     case 'ATTACKS': return { ...state, attacks: action.value };
     case 'CHOSEN_ATTACK': return { ...state, chosenAttack: action.value };
     case 'TYPED_POKEMON': return { ...state, typedPokemon: action.value };
+    case 'LANGUAGE': return { ...state, locale: action.value };
     default: return state;
   }
 };

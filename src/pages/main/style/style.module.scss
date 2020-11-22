@@ -20,8 +20,14 @@
   }
   .flags {
     @include absoluteLeftTop(10px, 10px);
+    @include flexRow(center);
+    .border {
+      border: 4px solid $secondary-color;
+      border-radius: 50%;
+    }
     img {
       width: 30px;
+      cursor: pointer;
     }
   }
   .container {
