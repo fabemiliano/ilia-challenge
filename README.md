@@ -25,10 +25,10 @@ To build this app the following technologies were applied:
 - React Router Dom: routing
 - Redux: state manager
 - FontAwesome: icons
-- Axios: api requests
+- Axios: http client
 - i18next: translation
 - prop-types: typechecking
-- eslint: linter
+- Eslint: linter
 
 
 For testing:
@@ -36,3 +36,9 @@ For testing:
 - React Testing Library: behavior test
 - Cypress: E2E tests
 
+In order to run locally, clone this repository:
+
+```git clone https://github.com/fabemiliano/ilia-challenge.git```
+
+Install the dependencies with ```npm istall``` 
+and run the application with ```npm start``` 
