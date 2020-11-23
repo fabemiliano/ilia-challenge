@@ -56,7 +56,7 @@ const mockedApi = {
   },
 };
 
-describe('testing main page renderization', () => {
+describe('testing main page rendering', () => {
   // beforeEach(cleanup);
   test('the page should show pokedex title', async () => {
     axios.get.mockResolvedValue(mockedApi);

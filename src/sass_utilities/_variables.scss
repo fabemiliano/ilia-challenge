@@ -3,6 +3,7 @@ $secondary-color: #ff0;
 $tertiary-color: #fff;
 $quarter-color: #fa0;
 $aux-color: #343D65;
+$gradient-color: rgba(34,193,195,1);
 
 @mixin flexRow($justify) {
   display: flex;

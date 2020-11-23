@@ -12,7 +12,8 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background: #2B3151;
+  background: -webkit-gradient(linear, left bottom, left top, from(#22c1c3), to(#2B3151));
+  background: linear-gradient(0deg, #22c1c3 0%, #2B3151 100%);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100vh;
@@ -39,6 +40,13 @@
   letter-spacing: 4px;
   -webkit-box-reflect: below -30px linear-gradient(to bottom, transparent, transparent, black);
   padding: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main .nav h1:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .main .flags {

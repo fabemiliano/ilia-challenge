@@ -42,3 +42,7 @@ In order to run locally, clone this repository:
 
 Install the dependencies with ```npm install``` 
 and run the application with ```npm start``` 
+
+
+The icons related to the pokemon types are part of this lib: https://github.com/duiker101/pokemon-type-svg-icons/releases/tag/1.0.0
+The layout was inspired by this model: https://dribbble.com/shots/14500564-Pokedex and this one: https://dribbble.com/shots/5619897-Pok-dex-Gengar

@@ -2,7 +2,7 @@
 
 .main {
   @include flexColumn(flex-start);
-  background: $main-color;
+  background: linear-gradient(0deg, $gradient-color 0%, $main-color 100%);
   box-sizing: border-box;
   height: 100vh;
   width: 100%;
@@ -16,6 +16,11 @@
       letter-spacing: 4px;
       -webkit-box-reflect: below -30px linear-gradient(to bottom, transparent, transparent, black);
       padding: 0;
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.1);
+        color: $primary-color;
+      }
     }
   }
   .flags {

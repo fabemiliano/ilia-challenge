@@ -3,7 +3,7 @@
 .main {
   width: 100%;
   height: 100vh;
-  background: $main-color;
+  background: linear-gradient(0deg, $gradient-color 0%, $main-color 100%);
   @include flexColumn(center);
   h1 {
     color: $secondary-color;

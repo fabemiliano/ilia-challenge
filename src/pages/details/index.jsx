@@ -38,7 +38,7 @@ function renderCardInfo(pokemon, setShowModal, setChosenAttack, t) {
       <div className={styles.right}>
         <p>{t('attacks')}</p>
         <div className={styles.attacks}>
-          {pokemon.attacks.map(({ name }) => <button data-testid="attack" key={name} onClick={() => { setShowModal(true); setChosenAttack(name); }} type="button">{name}</button>)}
+          {pokemon.attacks.map(({ name }) => <button style={{ backgroundColor: defineBg(pokemon.types[0]) }} data-testid="attack" key={name} onClick={() => { setShowModal(true); setChosenAttack(name); }} type="button">{name}</button>)}
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@ function Details(props) {
       : (
         <div>
           <div className={styles.main} style={{ filter: showModal ? 'blur(10px)' : 'blur(0px)' }}>
-            <Link to="/" className={styles.arrowLeft} data-testid="go-back">
+            <Link to="/" style={{ backgroundColor: defineBg(pokemon.types[0]) }} className={styles.arrowLeft} data-testid="go-back">
               <FontAwesomeIcon icon={faArrowLeft} />
             </Link>
             {renderHeader(pokemon)}

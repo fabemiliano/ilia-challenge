@@ -32,7 +32,7 @@ describe('testing auxFunction', () => {
     const wrongColor = defineBg('Dragon');
     expect(wrongColor).not.toBe('#9DB7B7');
   });
-  it('tests getIcon funciton', () => {
+  it('tests getIcon function', () => {
     const wrongPath = getIcon('Dragon');
     expect(wrongPath).not.toBe('/icons/steel.svg');
     const rightPath = getIcon('Metal');

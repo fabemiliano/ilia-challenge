@@ -17,5 +17,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
-
-// https://github.com/duiker101/pokemon-type-svg-icons/releases/tag/1.0.0
