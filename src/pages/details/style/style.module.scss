@@ -81,6 +81,7 @@
     p {
       @include text(2rem, $tertiary-color);
       &:last-child {
+        font-size: 1rem;
         margin-bottom: 10px;
       }
     }

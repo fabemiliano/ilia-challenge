@@ -219,6 +219,7 @@
 }
 
 .main .circle p:last-child {
+  font-size: 1rem;
   margin-bottom: 10px;
 }
 
