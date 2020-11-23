@@ -40,4 +40,10 @@ describe('testing main page', () => {
     cy.contains(/arcanine/i).click();
     cy.contains(/resistencias/i);
   });
+  it('checks if the nor found page is rendered', () => {
+    cy.visit('/randompage');
+    cy.contains(/not found/i);
+    cy.contains(/main page/i).click();
+    cy.contains(/pokedex/i);
+  });
 });

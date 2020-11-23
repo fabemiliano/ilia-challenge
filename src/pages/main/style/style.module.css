@@ -94,12 +94,12 @@
   border-radius: 10px;
   border: 5px solid black;
   margin: 25px 10px;
-  min-height: 450px;
+  min-height: 350px;
   padding: 10px;
   position: relative;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  min-width: 250px;
+  min-width: 200px;
 }
 
 .main .container .card:hover {

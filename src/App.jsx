@@ -10,7 +10,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Main} />
         <Route exact path="/pokemon/:id" render={(props) => <Details props={props} />} />
-        <Route render={NotFound} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
