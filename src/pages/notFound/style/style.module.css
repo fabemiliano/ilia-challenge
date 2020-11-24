@@ -1,6 +1,6 @@
 .main {
-  width: 100%;
   height: 100vh;
+  width: 100%;
   background: -webkit-gradient(linear, left bottom, left top, from(#22c1c3), to(#2B3151));
   background: linear-gradient(0deg, #22c1c3 0%, #2B3151 100%);
   display: -webkit-box;

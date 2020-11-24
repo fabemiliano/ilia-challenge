@@ -1,19 +1,14 @@
 @import "../../../sass_utilities/variables";
 
 .main {
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(0deg, $gradient-color 0%, $main-color 100%);
-
+  @include mainPage(100vh, 100%, linear-gradient(0deg, $quarter-color 0%, $main-color 100%));
   @include flexColumn(center);
   img {
     width: 100px;
     animation: animate linear 3s infinite;
   }
   span {
-    font-size: 5rem;
-    font-family: Bebas Neue;
-    color: $tertiary-color;
+    @include text(5rem, $tertiary-color);
     animation: animatespan 5s linear infinite;
     @for $i from 1 through 10 {
       &:nth-child(#{$i}) {

@@ -2,7 +2,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  background: #fa0;
+  background: #22c1c3;
   border-radius: 40px;
   height: 40vh;
   max-width: 500px;
@@ -17,6 +17,7 @@
   font-size: 2rem;
   color: #fff;
   text-align: center;
+  font-family: Bebas Neue;
 }
 
 .main p:first-child {
@@ -24,7 +25,7 @@
 }
 
 .main p:last-child {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .main .exit {
@@ -43,7 +44,7 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background: #fa0;
+  background: #22c1c3;
   border: none;
   outline: none;
   -webkit-transition: 0.5s;
@@ -61,7 +62,7 @@
 }
 
 .main .exit:hover svg path {
-  fill: #fa0;
+  fill: #22c1c3;
 }
 
 .main .attackInfo {
@@ -78,5 +79,11 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   height: 100%;
+}
+
+@media (min-width: 768px) {
+  .main p:last-child {
+    font-size: 1.5rem;
+  }
 }
 /*# sourceMappingURL=style.module.css.map */

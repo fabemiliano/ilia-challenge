@@ -2,10 +2,7 @@
 
 .main {
   @include flexColumn(flex-start);
-  background: linear-gradient(0deg, $gradient-color 0%, $main-color 100%);
-  box-sizing: border-box;
-  height: 100vh;
-  width: 100%;
+  @include mainPage(100vh, 100%, linear-gradient(0deg, $quarter-color 0%, $main-color 100%));
   .nav {
     @include flexRow(space-between);
     margin-top: 40px;
@@ -17,10 +14,6 @@
       -webkit-box-reflect: below -30px linear-gradient(to bottom, transparent, transparent, black);
       padding: 0;
       transition: 0.5s;
-      &:hover {
-        transform: scale(1.1);
-        color: $tertiary-color;
-      }
     }
   }
   .flags {
@@ -33,6 +26,19 @@
     img {
       width: 30px;
       cursor: pointer;
+    }
+  }
+  .logo {
+    position: relative;
+    transition: 0.5s;
+    &:hover {
+      color: $tertiary-color;
+      transform: scale(1.1);
+    }
+    img {
+      @include absoluteLeftTop(18px, 43%);
+      width: 25px;
+      z-index: 1;
     }
   }
   .container {

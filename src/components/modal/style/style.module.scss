@@ -16,7 +16,7 @@
       font-size: 3rem;
     }
     &:last-child {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
   }
   .exit {
@@ -42,5 +42,15 @@
   .attackInfo {
     @include flexColumn(space-around);
     height: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    p {
+      &:last-child {
+        font-size: 1.5rem;
+      }
+    } 
   }
 }

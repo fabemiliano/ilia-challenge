@@ -1,9 +1,8 @@
 $main-color: #2B3151;
 $secondary-color: rgb(167, 214, 245);
 $tertiary-color: #fff;
-$quarter-color: #fa0;
+$quarter-color:rgba(34,193,195,1);
 $aux-color: #343D65;
-$gradient-color: rgba(34,193,195,1);
 
 @mixin flexRow($justify) {
   display: flex;
@@ -33,7 +32,8 @@ $gradient-color: rgba(34,193,195,1);
 @mixin text($fontSize, $color) {
   font-size: $fontSize;
   color: $color;
-  text-align: center
+  text-align: center;
+  font-family: Bebas Neue;
 }
 
 @mixin iconBg($height, $width, $borderRadius, $background) {
@@ -43,4 +43,10 @@ $gradient-color: rgba(34,193,195,1);
   background: $background;
   border: none;
   outline: none;
+}
+
+@mixin mainPage($height, $width, $background) {
+  height: $height;
+  width: $width;
+  background: $background;
 }

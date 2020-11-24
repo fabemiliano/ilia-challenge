@@ -2,8 +2,7 @@
 
 .main {
   @include flexColumn(flex-end);
-  background: linear-gradient(0deg, $gradient-color 0%, $main-color 100%);
-  height: 100vh;
+  @include mainPage(100vh, 100%, linear-gradient(0deg, $quarter-color 0%, $main-color 100%));
   transition: 0.5s;
   .container {
     @include flexColumn(center);

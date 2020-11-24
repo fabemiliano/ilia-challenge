@@ -1,6 +1,6 @@
 .main {
-  width: 100%;
   height: 100vh;
+  width: 100%;
   background: -webkit-gradient(linear, left bottom, left top, from(#22c1c3), to(#2B3151));
   background: linear-gradient(0deg, #22c1c3 0%, #2B3151 100%);
   display: -webkit-box;
@@ -26,8 +26,9 @@
 
 .main span {
   font-size: 5rem;
-  font-family: Bebas Neue;
   color: #fff;
+  text-align: center;
+  font-family: Bebas Neue;
   -webkit-animation: animatespan 5s linear infinite;
           animation: animatespan 5s linear infinite;
 }

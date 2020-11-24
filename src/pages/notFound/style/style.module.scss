@@ -1,9 +1,7 @@
 @import "../../../sass_utilities/variables";
 
 .main {
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(0deg, $gradient-color 0%, $main-color 100%);
+  @include mainPage(100vh, 100%, linear-gradient(0deg, $quarter-color 0%, $main-color 100%));
   @include flexColumn(center);
   h1 {
     color: $secondary-color;

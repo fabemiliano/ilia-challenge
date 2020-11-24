@@ -14,7 +14,12 @@ function SearchBar(props) {
 
   return (
     <div className={styles.search} data-testid="search-icon">
-      <input data-testid="search" placeholder={t('placeholder')} value={typedPokemon} onChange={({ target: { value } }) => setTypedPokemon(value)} />
+      <input
+        data-testid="search"
+        placeholder={t('placeholder')}
+        value={typedPokemon}
+        onChange={({ target: { value } }) => setTypedPokemon(value)}
+      />
       <div>
         <FontAwesomeIcon icon={faSearch} />
       </div>
@@ -25,6 +30,7 @@ function SearchBar(props) {
 const mapStateToProps = (state) => ({
   typedPokemon: state.typedPokemon,
 });
+
 const mapDispatchToProps = (dispatch) => ({
   setTypedPokemon: (value) => dispatch(changeTypedPokemon(value)),
 });

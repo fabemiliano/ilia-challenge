@@ -32,7 +32,12 @@ const renderWithRedux = (
 };
 
 jest.mock('react-i18next', () => ({
-  useTranslation: () => ({ t: (key) => key }),
+  useTranslation: () => ({
+    t: (str) => str,
+    i18n: {
+      changeLanguage: () => new Promise(() => { }),
+    },
+  }),
 }));
 
 jest.mock('axios');
@@ -57,7 +62,7 @@ const mockedApi = {
 };
 
 describe('testing main page rendering', () => {
-  // beforeEach(cleanup);
+  beforeEach(cleanup);
   test('the page should show pokedex title', async () => {
     axios.get.mockResolvedValue(mockedApi);
     const { queryByText } = renderWithRedux(<App />);
@@ -74,20 +79,17 @@ describe('testing main page rendering', () => {
       expect(text).toBeInTheDocument();
     });
   });
-  test('on clicking a card redirect to description page', async () => {
+  test('should search pokemon by name', async () => {
     axios.get.mockResolvedValue(mockedApi);
-    const { getByTestId, history } = renderWithRedux(<App />);
-    console.log(history);
-    await waitFor(async () => {
-      const text = getByTestId('101');
-      console.log(text);
-      console.log(fireEvent.click(text));
-      if (text) {
-        fireEvent.click(text);
-        const { pathname } = history.location;
-        console.log(pathname);
-      }
-      // expect(pathname).toBe('/pokemon/101');
+    const { getByTestId, queryByText } = renderWithRedux(<App />);
+    await waitFor(() => {
+      const input = getByTestId('search');
+      expect(input).toBeInTheDocument();
+      fireEvent.change(input, { target: { value: 'pikachu' } });
+      const pikachu = queryByText(/pikachu/i);
+      expect(pikachu).toBeInTheDocument();
+      const charmander = queryByText(/charmander/i);
+      expect(charmander).not.toBeInTheDocument();
     });
   });
 });

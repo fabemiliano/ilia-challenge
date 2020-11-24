@@ -16,7 +16,6 @@ function Modal(props) {
   const { t } = useTranslation();
 
   return (
-
     <div className={styles.main}>
       <button type="button" className={styles.exit} onClick={() => setShowModal(false)} data-testid="exit">
         <FontAwesomeIcon
@@ -46,7 +45,7 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);
 
 Modal.propTypes = {
-  chosenAttack: PropTypes.bool.isRequired,
+  chosenAttack: PropTypes.string.isRequired,
   setShowModal: PropTypes.func.isRequired,
   attacks: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
