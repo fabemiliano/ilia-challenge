@@ -1,6 +1,6 @@
 # Pokedex
 
-<img src="./pokedex.png" width="70%"/>
+<img src="./pokedex.png" width="100%"/>
 
 This responsive application was built with modern React and a public [API](https://pokemontcg.io/).
 
