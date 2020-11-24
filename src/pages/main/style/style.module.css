@@ -35,7 +35,7 @@
 }
 
 .main .nav h1 {
-  color: #ff0;
+  color: #a7d6f5;
   font-family: Pokemon;
   letter-spacing: 4px;
   -webkit-box-reflect: below -30px linear-gradient(to bottom, transparent, transparent, black);
@@ -47,6 +47,7 @@
 .main .nav h1:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  color: #fff;
 }
 
 .main .flags {
@@ -65,7 +66,7 @@
 }
 
 .main .flags .border {
-  border: 4px solid #ff0;
+  border: 4px solid #a7d6f5;
   border-radius: 50%;
 }
 

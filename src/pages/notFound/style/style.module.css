@@ -19,7 +19,7 @@
 }
 
 .main h1 {
-  color: #ff0;
+  color: #a7d6f5;
   font-family: Pokemon;
   font-size: 3rem;
   margin: 0;
@@ -58,7 +58,7 @@
 }
 
 .main .container a {
-  background: #ff0;
+  background: #a7d6f5;
   padding: 10px 20px;
   border-radius: 50px;
   font-size: 1.5rem;

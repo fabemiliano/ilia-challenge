@@ -13,26 +13,26 @@ describe('testing main page', () => {
     cy.contains(/arcanine/i);
     cy.contains(/aegislash/i).should('not.exist');
   });
-  it('checks if details page is rendered', () => {
+  it('checks if details page is rendered when choosing a card', () => {
     cy.contains(/arcanine/i).click();
     cy.contains(/pokedex/).should('not.exist');
     cy.contains(/resistances/);
     cy.contains(/none/i);
     cy.contains(/weaknesses/);
   });
-  it('checks if modal can be shown', () => {
+  it('checks if modal can be shown when selecting an attack', () => {
     cy.contains(/mana/).should('not.exist');
     cy.get('[data-testid=attack]').click();
     cy.contains(/mana/i);
     cy.get('[data-testid=exit]').click();
     cy.contains(/mana/).should('not.exist');
   });
-  it('checks if can go to main page', () => {
+  it('checks if can go to main page from details screen', () => {
     cy.get('[data-testid=go-back]').click();
     cy.contains(/pokedex/i);
     cy.contains(/resistances/).should('not.exist');
   });
-  it('checks language selected', () => {
+  it('checks language selection', () => {
     cy.contains(/arcanine/i).click();
     cy.contains(/resistances/);
     cy.get('[data-testid=go-back]').click();
@@ -40,7 +40,7 @@ describe('testing main page', () => {
     cy.contains(/arcanine/i).click();
     cy.contains(/resistencias/i);
   });
-  it('checks if the nor found page is rendered', () => {
+  it('checks if the not found page is rendered when accessing a wrong route', () => {
     cy.visit('/randompage');
     cy.contains(/not found/i);
     cy.contains(/main page/i).click();
